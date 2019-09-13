@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qXQ-V9-JgS">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SoFi Imgur Search-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoFi_imgur" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gUq-Ij-SfN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2dM-oA-AWr"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kio-pv-nYm" customClass="PaginatedTableView" customModule="PaginatedTableView">
+                                <rect key="frame" x="0.0" y="133" width="414" height="763"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kio-pv-nYm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="3JP-wc-5Q6"/>
+                            <constraint firstItem="gUq-Ij-SfN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3oD-2H-Uob"/>
+                            <constraint firstAttribute="bottom" secondItem="Kio-pv-nYm" secondAttribute="bottom" id="Gi5-GM-olP"/>
+                            <constraint firstItem="gUq-Ij-SfN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kyb-7N-RkQ"/>
+                            <constraint firstItem="Kio-pv-nYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Soc-wb-HOH"/>
+                            <constraint firstItem="Kio-pv-nYm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="gJZ-s5-RD1"/>
+                            <constraint firstItem="gUq-Ij-SfN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="vuG-Gp-PJ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SoFi Imgur Search" id="dvh-34-Xc0">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="nez-ir-EWl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imgurSearchBar" destination="gUq-Ij-SfN" id="XBx-uR-CjR"/>
+                        <outlet property="imgurSearchResultsTable" destination="Kio-pv-nYm" id="kFK-jA-kWx"/>
+                        <segue destination="Mze-3O-JHD" kind="show" identifier="goToImage" id="gZ4-8a-h35"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="138.61607142857142"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="64r-d5-4VN">
+            <objects>
+                <viewController title="Image" id="Mze-3O-JHD" customClass="ImageViewController" customModule="SoFi_imgur" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dtb-wr-pVc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfj-zg-1Go">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mfj-zg-1Go" secondAttribute="bottom" id="DGj-6u-l9z"/>
+                            <constraint firstItem="mfj-zg-1Go" firstAttribute="trailing" secondItem="dtb-wr-pVc" secondAttribute="trailing" id="G5Y-Rr-zZW"/>
+                            <constraint firstItem="mfj-zg-1Go" firstAttribute="leading" secondItem="dtb-wr-pVc" secondAttribute="leading" id="LyW-CD-WJ5"/>
+                            <constraint firstItem="mfj-zg-1Go" firstAttribute="top" secondItem="QNq-2w-zcJ" secondAttribute="top" id="Z3g-DL-Gib"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QNq-2w-zcJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageResult" destination="mfj-zg-1Go" id="a81-le-6jk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dro-rf-krl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073.913043478261" y="144.64285714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f7A-N8-TEW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qXQ-V9-JgS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dFE-8x-4qQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vc3-Nz-WQS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGf-x7-0kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="783.48214285714278"/>
+        </scene>
+    </scenes>
+</document>
